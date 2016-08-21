@@ -12,6 +12,7 @@ libraryDependencies ++= Seq(
   jdbc,
   cache,
   ws,
+  specs2 % Test,
   "org.scalatestplus.play" %% "scalatestplus-play" % "1.5.1" % Test,
   "org.scalikejdbc" %% "scalikejdbc" % "2.3.1",
   "org.scalikejdbc" %% "scalikejdbc-test" % "2.3.+",

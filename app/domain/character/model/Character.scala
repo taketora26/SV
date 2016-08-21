@@ -6,19 +6,19 @@ class Character(
                  val fullName: String,
                  val realName: String,
                  val role: Role,
-                 val skills: String,
+                 val skill: String,
                  val imageUrl: String
                )
 
 object Character {
-  def apply(id: Long, name: String, fullName: String, realName: String, role: Role, skills: String, imageUrl: String) =
+  def apply(id: Long, name: String, fullName: String, realName: String, role: Role, skill: String, imageUrl: String) =
     new Character(
       id = id,
       name = name,
       fullName = fullName,
       realName = realName,
       role = role,
-      skills = skills,
+      skill = skill,
       imageUrl = imageUrl
     )
 }
