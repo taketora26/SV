@@ -20,30 +20,28 @@ flush privileges;
 ```
 
 
-マイグレーションの実行
+- マイグレーションの実行
 ```
 sbt flywayMigrate -Dflyway.url=jdbc:mysql://localhost:3306/siliconValley -Dflyway.user=richard -Dflyway.password=siliconValley
 ```
-DBの初期化
+- DBの初期化
 ```
 sbt flywayClean -Dflyway.url=jdbc:mysql://localhost:3306/siliconValley -Dflyway.user=richard -Dflyway.password=siliconValley
 ```
 
 
-マイグレーションの実行(テスト)
+- マイグレーションの実行(テスト)
 ```
 sbt flywayMigrate -Dflyway.url=jdbc:mysql://localhost:3306/siliconValley_test -Dflyway.user=richard -Dflyway.password=siliconValley
 ```
-DBの初期化
+- DBの初期化
 ```
 sbt flywayClean -Dflyway.url=jdbc:mysql://localhost:3306/siliconValley_test -Dflyway.user=richard -Dflyway.password=siliconValley
 ```
 
 
 
-This file will be packaged with your application when using `activator dist`.
 
-There are several demonstration files available in this template.
 
 Controllers
 ===========
