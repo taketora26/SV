@@ -16,24 +16,26 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th>名前</th>
-                        <th>本名</th>
-                        <th>役割</th>
-                        <th>スキル</th>
                         <th>画像</th>
+                        <th>name</th>
+                        <th>full name</th>
+                        <th>real name</th>
+                        <th>position</th>
+                        <th>skill</th>
                         <th>&nbsp;</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                     @for( character <- Characters) {
+                        <td>
+                            <IMG SRC=@character.imageUrl ALT="テスト" WIDTH="230" HEIGHT="140">
+                        </td>
                         <td>@character.name</td>
                         <td>@character.fullName</td>
+                        <td>@character.realName</td>
                         <td>@character.role</td>
                         <td>@character.skill</td>
-                        <td>
-                        <IMG SRC=@character.imageUrl ALT="テスト" WIDTH="190" HEIGHT="140">
-                        </td>
                     </tr>
                     }
                 </tbody>
