@@ -6,13 +6,13 @@
     <head>
         <meta charset="UTF-8">
         <title>Character list</title>
-        @*<link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/remark.css")">*@
+        <link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/character.css")">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     </head>
     <body>
         <div class="list">
-            <h1>キャラクター一覧</h1>
+            <h1>SiliconValley</h1>
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -20,7 +20,7 @@
                         <th>本名</th>
                         <th>役割</th>
                         <th>スキル</th>
-                        <th>イメージ</th>
+                        <th>画像</th>
                         <th>&nbsp;</th>
                     </tr>
                 </thead>
@@ -31,7 +31,9 @@
                         <td>@character.fullName</td>
                         <td>@character.role</td>
                         <td>@character.skill</td>
-                        <td>@character.imageUrl</td>
+                        <td>
+                        <IMG SRC=@character.imageUrl ALT="テスト" WIDTH="190" HEIGHT="140">
+                        </td>
                     </tr>
                     }
                 </tbody>

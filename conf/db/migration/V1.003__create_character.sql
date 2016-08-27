@@ -19,6 +19,6 @@ VALUES
 (4,'ギルフォイル','バートラム・ギルフォイル','Martin Starr',1,'セキュリティ','http://creatorjapan.asia/wp-content/uploads/2016/04/a452a090_siliconvalley18.xxxlarge_2x.jpg'),
 (5,'ディネッシュ','ディネッシュ・チャグタイ','Kumail Nanjiani',1, 'Java','http://creatorjapan.asia/wp-content/uploads/2016/04/kumail-nanjiani-1920-768x432.jpg'),
 (6,'ジャレッド','ドナルド”ジャレッド”ダン','Zach Woods',2, NULL,'http://pattaya-time.wpcloud.net/wp-content/uploads/2016/07/bf153af5fdf8bd3ea9c91ddcde681de9.jpg'),
-(7,'ギャビン','ギャビン・ベルソン','Matt Ross',4, NULL,'http://creatorjapan.asia/wp-content/uploads/2016/04/josh-brener-images.jpg'),
+(7,'ギャビン','ギャビン・ベルソン','Matt Ross',4, NULL,'http://creatorjapan.asia/wp-content/uploads/2016/04/matt-ross-sv-1920-1024x576.jpg'),
 (8,'グレゴリー','ピーター・グレゴリー','Christopher Evan Welch',5, NULL,'http://creatorjapan.asia/wp-content/uploads/2016/04/how-silicon-valley-dealt-with-the-death-of-one-of-its-most-popular-actors.jpg'),
 (9,'モニカ','モニカ・ホール','Amanda Crew',6, NULL,'http://creatorjapan.asia/wp-content/uploads/2016/04/amanda-crew-1024.jpg');

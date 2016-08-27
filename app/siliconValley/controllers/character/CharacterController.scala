@@ -10,10 +10,10 @@ class CharacterController extends Controller {
 
   def list = Action { implicit request =>
     val charactersResponse = characterRepository.resolveAll.getOrElse(Seq.empty)
+    println(charactersResponse)
     val characters = charactersResponse.map { character =>
       Characters(character)
     }
-    Ok(views.character.html.list(characters))
-//    Ok("Hello, World.")
+    Ok(siliconValley.views.html.list(characters))
   }
 }

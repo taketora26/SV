@@ -19,11 +19,11 @@ class CharacterRepository(
     Character(
       id = rs.int("id"),
         name = rs.string("name"),
-        fullName = rs.string("fullName"),
-        realName = rs.string("realName"),
+        fullName = rs.string("full_name"),
+        realName = rs.string("real_name"),
         roleId = rs.int("role_id"),
         skill = rs.string("skill"),
-        imageUrl = rs.string("imageUrl")
+        imageUrl = rs.string("image_url")
     )
   }
 
