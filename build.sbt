@@ -19,7 +19,8 @@ libraryDependencies ++= Seq(
   "org.scalikejdbc" %% "scalikejdbc-config" % "2.3.1",
   "org.scalikejdbc" %% "scalikejdbc-play-plugin" % "2.3.6",
   "org.scalikejdbc" %% "scalikejdbc-play-initializer" % "2.4.3",
-  "mysql" % "mysql-connector-java" % "5.1.33"
+  "mysql" % "mysql-connector-java" % "5.1.33",
+  "org.json4s" % "json4s-native_2.11" % "3.4.0"
 )
 
 resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"

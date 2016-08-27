@@ -1,4 +1,4 @@
-package domain.company.model
+package siliconValley.domain.company.model
 
 class CompanyService(
                       val id: Long,

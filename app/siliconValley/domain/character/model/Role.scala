@@ -1,4 +1,4 @@
-package domain.character.model
+package siliconValley.domain.character.model
 
 sealed abstract class Role(val value: Int )
 

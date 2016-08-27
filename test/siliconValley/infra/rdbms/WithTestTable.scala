@@ -1,4 +1,4 @@
-package infra.rdbms
+package siliconValley.infra.rdbms
 
 import scalikejdbc.config.DBs
 import scalikejdbc.{SQL, AutoSession, DBSession}

@@ -1,4 +1,4 @@
-package infra.rdbms
+package siliconValley.infra.rdbms
 
 import scalikejdbc.{NoExtractor, SQL}
 
