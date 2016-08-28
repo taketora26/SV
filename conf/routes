@@ -6,4 +6,5 @@
 GET         /assets/*file        controllers.Assets.versioned(path="/public", file: Asset)
 
 GET     /list                        siliconValley.controllers.character.CharacterController.list
+GET     /api                        siliconValley.controllers.api.CharacterApiController.charactersApi
 

@@ -1,6 +1,8 @@
 package siliconValley.domain.character.model
 
- class Character(
+import play.api.libs.json.{Json, Writes}
+
+class Character(
                  val id: Long,
                  val name: String,
                  val fullName: String,
@@ -12,6 +14,8 @@ package siliconValley.domain.character.model
 
 object Character {
 
+  implicit val CharacterWrite: Writes[Character] = Json.writes[Character]
+
   def apply(id: Long, name: String, fullName: String, realName: String, roleId: Int, skill: String, imageUrl: String) =
     new Character(
       id = id,
@@ -21,6 +25,17 @@ object Character {
       roleId = roleId,
       skill = skill,
       imageUrl = imageUrl
+    )
+
+  def unapply(character:Character): Option[(Long,String,String,String,Int,String,String)] =
+    Some(
+      character.id,
+      character.name,
+      character.fullName,
+      character.realName,
+      character.roleId,
+      character.skill,
+      character.imageUrl
     )
 
 }
