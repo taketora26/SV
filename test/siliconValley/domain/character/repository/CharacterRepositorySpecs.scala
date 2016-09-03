@@ -29,6 +29,20 @@ with WithTestTable {
 
     }
 
+    "読み取り(select)ができる" >> {
+      withSession {
+
+        val characterName = "リチャード"
+        val resolveBy: Try[Option[Character]] = characterRepository.resolveByName(characterName)
+
+        val expectFullName = "リチャード・ヘンドリックス"
+
+        resolveBy must beSuccessfulTry
+        resolveBy.get.get.fullName must beEqualTo(expectFullName)
+      }
+
+    }
+
   }
 
 }
