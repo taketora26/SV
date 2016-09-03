@@ -7,3 +7,10 @@ project
 /.project
 /.settings
 /RUNNING_PID
+app-2.11/
+app/siliconValley/application/characterProfile/
+app/siliconValley/application/characters/form/
+app/siliconValley/domain/character/model/x.json
+siliconValley/
+src/
+test-2.11/
