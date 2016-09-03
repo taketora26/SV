@@ -39,9 +39,10 @@ sbt flywayMigrate -Dflyway.url=jdbc:mysql://localhost:3306/siliconValley_test -D
 sbt flywayClean -Dflyway.url=jdbc:mysql://localhost:3306/siliconValley_test -Dflyway.user=richard -Dflyway.password=siliconValley
 ```
 
-
-
-
+- アプリケーションの実行
+```
+$ activator "siliconValley/run"
+```
 
 Controllers
 ===========
