@@ -49,6 +49,15 @@ $ activator "siliconValley/run"
 $ activator "siliconValley/test"
 ```
 
+- 特定のテストの実行
+
+例えば ```CharacterAffiliationRepositorySpecs``` のみ実行する場合は以下の通りです。
+
+```
+$ activator "siliconValley/testOnly siliconValley.domain.character.repository.CharacterAffiliationRepositorySpecs"
+```
+
+
 
 Controllers
 ===========
