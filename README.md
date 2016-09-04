@@ -44,6 +44,12 @@ sbt flywayClean -Dflyway.url=jdbc:mysql://localhost:3306/siliconValley_test -Dfl
 $ activator "siliconValley/run"
 ```
 
+- アプリケーションのテスト
+```
+$ activator "siliconValley/test"
+```
+
+
 Controllers
 ===========
 
