@@ -32,7 +32,7 @@ with WithTestTable {
     "読み取り(select)ができる" >> {
       withSession {
 
-        val characterName = "リチャード"
+        val characterName:String = "リチャード"
         val resolveBy: Try[Option[Character]] = characterRepository.resolveByName(characterName)
 
         val expectFullName = "リチャード・ヘンドリックス"
