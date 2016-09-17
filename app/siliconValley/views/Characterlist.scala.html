@@ -22,12 +22,14 @@
                         <th>real name</th>
                         <th>position</th>
                         <th>skill</th>
+                        <th>link</th>
                         <th>&nbsp;</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                     @for( character <- Characters) {
+
                         <td>
                             <IMG SRC=@character.imageUrl ALT="テスト" WIDTH="230" HEIGHT="140">
                         </td>
@@ -36,6 +38,7 @@
                         <td>@character.realName</td>
                         <td>@character.role</td>
                         <td>@character.skill</td>
+                        <td><a href="http://localhost:9000/charactersProfile/list/@character.id">詳細</a></td>
                     </tr>
                     }
                 </tbody>

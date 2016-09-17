@@ -16,11 +16,10 @@ class CharacterController extends Controller {
     val characters = charactersResponse.map { character =>
       Characters(character)
     }
-    Ok(siliconValley.views.html.characterlist(characters))
+    Ok(siliconValley.views.html.characterList(characters))
   }
 
-  def showCharacterProfile  = Action { implicit request =>
-    val characterId = 1
+  def showCharacterProfile(characterId:Long)  = Action { implicit request =>
     val character = characterRepository.resolveById(characterId).get.get
     val charactersProfile = CharacterProfile(character)
 

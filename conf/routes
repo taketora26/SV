@@ -8,4 +8,4 @@ GET        /assets/*file                  controllers.Assets.versioned(path="/pu
 GET        /characters/list               siliconValley.controllers.character.CharacterController.showCharacterList
 GET        /characters/api                siliconValley.controllers.api.CharacterApiController.charactersApi
 
-GET        /charactersProfile/list        siliconValley.controllers.character.CharacterController.showCharacterProfile
+GET        /charactersProfile/list/:id        siliconValley.controllers.character.CharacterController.showCharacterProfile(id:Long)

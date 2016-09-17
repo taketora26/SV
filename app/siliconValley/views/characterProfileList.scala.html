@@ -1,5 +1,5 @@
 @*引数*@
-@(CharacterProfile:siliconValley.application.characterProfile.model.CharacterProfile)(implicit session: Session, flash: Flash)
+@(CharacterProfile: siliconValley.application.characterProfile.model.CharacterProfile)(implicit session: Session, flash: Flash)
 
 <!DOCTYPE html>
 <html>
@@ -16,31 +16,30 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th>画像</th>
+                        <th>companyName</th>
+                        <th>companyProductName</th>
+                        <th>companyProductDetail</th>
                         <th>name</th>
                         <th>full name</th>
                         <th>real name</th>
                         <th>position</th>
                         <th>skill</th>
-                        <th>companyName</th>
-                        <th>companyProductName</th>
-                        <th>companyProductDetail</th>
                         <th>&nbsp;</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <div align="center">
+                        <IMG SRC=@CharacterProfile.imageUrl WIDTH="500" HEIGHT="280">
+                    </div>
                     <tr>
-                        <td>
-                            <IMG SRC=@CharacterProfile.imageUrl ALT="テスト" WIDTH="230" HEIGHT="140">
-                        </td>
+                        <td>@CharacterProfile.companyName</td>
+                        <td>@CharacterProfile.companyProductName</td>
+                        <td>@CharacterProfile.companyProductDetail</td>
                         <td>@CharacterProfile.name</td>
                         <td>@CharacterProfile.fullName</td>
                         <td>@CharacterProfile.realName</td>
                         <td>@CharacterProfile.role</td>
                         <td>@CharacterProfile.skill</td>
-                        <td>@CharacterProfile.companyName</td>
-                        <td>@CharacterProfile.companyProductName</td>
-                        <td>@CharacterProfile.companyProductDetail</td>
                     </tr>
                 </tbody>
             </table>
