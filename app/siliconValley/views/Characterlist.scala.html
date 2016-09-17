@@ -1,0 +1,45 @@
+@*引数*@
+@(Characters: Seq[siliconValley.application.characters.model.Characters])(implicit session: Session, flash: Flash)
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Character Characterlist</title>
+        <link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/character.css")">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    </head>
+    <body>
+        <div class="Characterlist">
+            <h1>SiliconValley</h1>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>画像</th>
+                        <th>name</th>
+                        <th>full name</th>
+                        <th>real name</th>
+                        <th>position</th>
+                        <th>skill</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    @for( character <- Characters) {
+                        <td>
+                            <IMG SRC=@character.imageUrl ALT="テスト" WIDTH="230" HEIGHT="140">
+                        </td>
+                        <td>@character.name</td>
+                        <td>@character.fullName</td>
+                        <td>@character.realName</td>
+                        <td>@character.role</td>
+                        <td>@character.skill</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

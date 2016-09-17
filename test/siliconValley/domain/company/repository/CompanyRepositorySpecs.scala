@@ -20,7 +20,7 @@ with WithTestTable {
     "読み取り(select)ができる" >> {
       withSession {
 
-        val companyId: Long = 1
+        val companyId: Long = 1L
         val resolveBy: Try[List[Company]] = companyRepository.resolveById(companyId)
 
         val expectName = "PiedPiper"

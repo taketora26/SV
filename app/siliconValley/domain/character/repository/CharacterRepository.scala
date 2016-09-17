@@ -19,6 +19,11 @@ class CharacterRepository(
     characterSQLProvider.selectByName(name).map(wrappedResultSet).single().apply()
   }
 
+  def resolveById(id: Long): Try[Option[Character]] = Try {
+    characterSQLProvider.selectById(id).map(wrappedResultSet).single().apply()
+  }
+
+
   private def wrappedResultSet(rs: WrappedResultSet): Character = {
     Character(
       id = rs.int("id"),

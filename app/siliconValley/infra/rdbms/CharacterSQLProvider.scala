@@ -18,5 +18,16 @@ class CharacterSQLProvider {
   """.stripMargin
   ).bindByName('name -> name)
 
+  def selectById(id:Long):SQL[Nothing,NoExtractor] =
+    SQL(
+      """
+        |SELECT *
+        |FROM
+        | `characters`
+        | WHERE
+        | `id` = /*'id*/'id'
+      """.stripMargin
+    ).bindByName('id -> id)
+
 
 }
