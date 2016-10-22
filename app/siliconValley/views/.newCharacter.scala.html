@@ -1,0 +1,45 @@
+@(characterForm: Form[siliconValley.application.characters.form.CharacterFormData])(implicit messages: Messages)
+
+@main("新規登録")() {
+
+    <div class="container">
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-heading">新規登録</div>
+                <div class="panel-body">
+                @helper.form(action = routes.siliconValley.controllers.character.CharacterController.createCharacter()) {
+                    <div class="form-group">
+                        <label for="name">キャラクターネーム</label>
+                        <input id="name" class="form-control" type="text" name="name" value="@characterForm("name").value"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="full_name">フルネーム</label>
+                        <input id="full_name" class="form-control" type="text" name="full_name" value="@characterForm("full_name").value"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="real_name">本名</label>
+                        <input id="real_name" class="form-control" type="text" name="real_name" value="@characterForm("real_name").value"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="role">ポジション</label>
+                        <input id="role" class="form-control" type="text" name="role" value="@characterForm("role").value"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="skill">スキル</label>
+                        <input id="skill" class="form-control" type="text" name="skill" value="@characterForm("skill").value"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="image_url">画像URL</label>
+                        <input id="image_url" class="form-control" type="image_url" name="image_url" value="@characterForm("image_url").value"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">company</label>
+                        <input id="company" class="form-control" type="company" name="company" value="@characterForm("company").value"/>
+                    </div>
+                    <button type="submit" class="btn btn-primary">追加</button>
+                }
+                </div>
+            </div>
+        </div>
+    </div>
+}

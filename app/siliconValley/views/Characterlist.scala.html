@@ -7,6 +7,7 @@
         <meta charset="UTF-8">
         <title>Character Characterlist</title>
         <link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/character.css")">
+        <link rel="shortcut icon" href="@routes.Assets.versioned("images/favicon.png")">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     </head>
@@ -22,7 +23,6 @@
                         <th>real name</th>
                         <th>position</th>
                         <th>skill</th>
-                        <th>link</th>
                         <th>&nbsp;</th>
                     </tr>
                 </thead>
@@ -33,12 +33,11 @@
                         <td>
                             <IMG SRC=@character.imageUrl ALT="テスト" WIDTH="230" HEIGHT="140">
                         </td>
-                        <td>@character.name</td>
+                        <td><a href="http://localhost:9000/charactersProfile/list/@character.id">@character.name</a></td>
                         <td>@character.fullName</td>
                         <td>@character.realName</td>
                         <td>@character.role</td>
                         <td>@character.skill</td>
-                        <td><a href="http://localhost:9000/charactersProfile/list/@character.id">詳細</a></td>
                     </tr>
                     }
                 </tbody>

@@ -74,6 +74,7 @@ object CharacterProfile {
           case Some(companyProduct) => companyProduct
           case None => new CompanyProduct(0,"","")
         }
+        case Failure(e) => throw new IllegalArgumentException
       }
     }
 

@@ -3,9 +3,11 @@
 # ~~~~
 
 # Map static resources from the /public folder to the /assets URL path
-GET        /assets/*file                  controllers.Assets.versioned(path="/public", file: Asset)
+GET         /assets/*file                      controllers.Assets.versioned(path="/public", file: Asset)
 
-GET        /characters/list               siliconValley.controllers.character.CharacterController.showCharacterList
-GET        /characters/api                siliconValley.controllers.api.CharacterApiController.charactersApi
+GET         /characters/list                   siliconValley.controllers.character.CharacterController.showCharacterList
+GET         /characters/api                    siliconValley.controllers.api.CharacterApiController.charactersApi
+POST        /characters/create                 siliconValley.controllers.character.CharacterController.createCharacter
+GET        /characters/create                 siliconValley.controllers.character.CharacterController.createCharacterForm
 
-GET        /charactersProfile/list/:id        siliconValley.controllers.character.CharacterController.showCharacterProfile(id:Long)
+GET         /charactersProfile/list/:id        siliconValley.controllers.character.CharacterController.showCharacterProfile(id:Long)

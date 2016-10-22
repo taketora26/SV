@@ -23,6 +23,9 @@ class CharacterRepository(
     characterSQLProvider.selectById(id).map(wrappedResultSet).single().apply()
   }
 
+  def store(name: String, fullName: String, realName: String, roleId: Int, skill: String, imageUrl: String):Try[Long] = Try {
+    characterSQLProvider.insert(name,fullName,realName,roleId,skill,imageUrl).updateAndReturnGeneratedKey().apply()
+  }
 
   private def wrappedResultSet(rs: WrappedResultSet): Character = {
     Character(

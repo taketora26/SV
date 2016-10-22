@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Character</title>
+        <link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/character.css")">
+        <link rel="shortcut icon" href="@routes.Assets.versioned("images/favicon.png")">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    </head>
+    <body>
+        <form class="character-form" method="post" action="/characters/create">
+            <h1>新規登録</h1>
+            <div class="form-group">
+                <label for="name">キャラクターネーム</label>
+                <input id="name" class="form-control" type="text" name="name"/>
+            </div>
+            <div class="form-group">
+                <label for="full_name">フルネーム</label>
+                <input id="full_name" class="form-control" type="text" name="full_name"/>
+            </div>
+            <div class="form-group">
+                <label for="real_name">本名</label>
+                <input id="real_name" class="form-control" type="text" name="real_name"/>
+            </div>
+            <div class="form-group">
+            <label for="role">ポジション</label>
+            <select name="role" id="role" class="form-control" required>
+                <option value="1">Programmer</option>
+                <option value="2">BackOffice</option>
+                <option value="3">BoardMember</option>
+                <option value="4">President</option>
+                <option value="5">Incubator</option>
+                <option value="6">Assistant</option>
+            </select>
+            </div>
+            <div class="form-group">
+                <label for="skill">スキル</label>
+                <input id="skill" class="form-control" type="text" name="skill"/>
+            </div>
+            <div class="form-group">
+                <label for="image_url">画像URL</label>
+                <input id="image_url" class="form-control" type="image_url" name="image_url"/>
+            </div>
+            <div class="form-group">
+                <label for="company">company</label>
+                <input id="company" class="form-control" type="company" name="company""/>
+            </div>
+            <button type="submit" class="btn btn-primary">追加</button>
+            <div class="form-button">
+                <button class="btn btn-primary" type="submit">登録</button>
+            </div>
+        </form>
+    </body>
+</html>

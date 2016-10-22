@@ -16,6 +16,10 @@ class CompanyRepository(
     companySQLProvider.selectById(id).map(wrappedResultSet).single().apply()
   }
 
+  def resolveByName(name: String): Try[Option[Company]] = Try {
+    companySQLProvider.selectByName(name).map(wrappedResultSet).single().apply()
+  }
+
   private def wrappedResultSet(rs: WrappedResultSet): Company = {
     Company(
       id = rs.long("id"),

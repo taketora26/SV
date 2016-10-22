@@ -15,4 +15,16 @@ class CompanySQLProvider {
   """.stripMargin
   ).bindByName('id -> id)
 
+  def selectByName(name:String):SQL[Nothing,NoExtractor] =
+    SQL(
+      """
+        |SELECT *
+        |FROM
+        | `company`
+        | WHERE
+        | `name` = /*'name*/name
+      """.stripMargin
+    ).bindByName('name -> name)
+
+
 }
