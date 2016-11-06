@@ -17,6 +17,10 @@ class CharacterAffiliationRepository(
       .map(wrappedResultSet).single().apply()
   }
 
+  def store(companyId: Long, characterId: Long):Try[Long] = Try {
+    characterAffiliationSQLProvider.insert(companyId,characterId).updateAndReturnGeneratedKey().apply()
+  }
+
   private def wrappedResultSet(rs: WrappedResultSet):Long = {
     rs.long("company_id")
   }

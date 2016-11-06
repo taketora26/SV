@@ -3,17 +3,20 @@ package siliconValley.controllers.character
 import siliconValley.application.characterProfile.model.CharacterProfile
 import siliconValley.application.characters.form.CharacterForm
 import siliconValley.application.characters.model.Characters
-import siliconValley.domain.character.repository.CharacterRepository
-import siliconValley.domain.company.repository.CompanyRepository
+import siliconValley.domain.character.repository.{CharacterAffiliationRepository, CharacterRepository}
 import play.api.mvc.{Action, Controller}
 import siliconValley.application.characters.form.CharacterForm.CharacterFormData
 import siliconValley.domain.character.model.{Character, Role}
+import siliconValley.domain.company.repository.CompanyRepository
+
+import scala.util.Try
 
 
 class CharacterController extends Controller {
 
   val characterRepository = new CharacterRepository
-  // val companyRepository = mew CompanyRepository
+  val companyRepository = new CompanyRepository
+  val characterAffiliationRepository = new CharacterAffiliationRepository
 
   def showCharacterList = Action { implicit request =>
     lazy val charactersResponse = characterRepository.resolveAll.getOrElse(Seq.empty)
@@ -33,36 +36,25 @@ class CharacterController extends Controller {
   }
 
   def createCharacterForm = Action { implicit request =>
-    Ok(siliconValley.views.html.newCharacter())
+    lazy val companies = companyRepository.resolveAll.get
+    Ok(siliconValley.views.html.newCharacter(companies))
   }
+
 
   def createCharacter = Action { implicit request =>
     CharacterForm.form.bindFromRequest.fold(
       errors => BadRequest("入力ミス"),
       CharacterFormData => {
-        val checkNewCharacter = characterRepository.resolveByName(CharacterFormData.name).getOrElse(None)
+       lazy val company = companyRepository.resolveById(CharacterFormData.company).getOrElse(None)
+       lazy val checkNewCharacter = characterRepository.resolveByName(CharacterFormData.name).getOrElse(None)
         checkNewCharacter match {
-          case Some(u) =>  BadRequest("すでに登録されています")
-          case None => characterRepository.store(CharacterFormData.name,CharacterFormData.fullName,CharacterFormData.realName,CharacterFormData.roleId,CharacterFormData.skill,CharacterFormData.image_url)
+          case Some(u) => BadRequest("すでに登録されています")
+          case None =>
+            val characterId:Long= characterRepository.store(CharacterFormData.name, CharacterFormData.fullName, CharacterFormData.realName, CharacterFormData.roleId, CharacterFormData.skill, CharacterFormData.image_url).get
+            characterAffiliationRepository.store(company.get.id,characterId)
             Redirect("/characters/list")
         }
-
       })
   }
 
-
-
-//    CharacterForm.form.bindFromRequest.fold(
-//
-//      errors => BadRequest(views.html.newCharacter("入力ミス"))
-//
-//      CharacterFormData => {
-//        val newCharacter = characterRepository.resolveByName(CharacterFormData.name).getOrElse(None)
-//
-//        newCharacter match {
-//          case Some(Character) => BadRequest(views.html.newCharacter("入力ミス"))
-//          case _ => characterRepository
-//        }
-//      })
-//  }
 }

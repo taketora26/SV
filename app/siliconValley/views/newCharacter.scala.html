@@ -1,3 +1,5 @@
+@(companies: Seq[siliconValley.domain.company.model.Company])
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -44,9 +46,14 @@
             </div>
             <div class="form-group">
                 <label for="company">company</label>
-                <input id="company" class="form-control" type="company" name="company""/>
+                <select name="company" id="company" class="form-control" required>
+               @*<input id="company" class="form-control" type="company" name="company"/>*@
+                    @for(company <- companies) {
+                  <option value=@company.id>@company.name</option>
+                }
+                </select>
             </div>
-            <button type="submit" class="btn btn-primary">追加</button>
+            @*<button type="submit" class="btn btn-primary">追加</button>*@
             <div class="form-button">
                 <button class="btn btn-primary" type="submit">登録</button>
             </div>

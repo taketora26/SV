@@ -4,6 +4,9 @@ import scalikejdbc.{NoExtractor, SQL}
 
 class CompanySQLProvider {
 
+  def selectAll: SQL[Nothing, NoExtractor] =
+    SQL( """SELECT * FROM `company`""")
+
   def selectById(id:Long):SQL[Nothing,NoExtractor] =
   SQL(
   """

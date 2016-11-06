@@ -12,6 +12,10 @@ class CompanyRepository(
                          implicit val session: DBSession = AutoSession
                        ) {
 
+  def resolveAll:Try[List[Company]] = Try {
+    companySQLProvider.selectAll.map(wrappedResultSet).list().apply()
+  }
+
   def resolveById(id: Long): Try[Option[Company]] = Try {
     companySQLProvider.selectById(id).map(wrappedResultSet).single().apply()
   }

@@ -6,8 +6,10 @@ import siliconValley.domain.character.model.Role
 
 object CharacterForm {
 
-case class CharacterFormData(name: String, fullName: String, realName: String, roleId: Int, skill: String, image_url: String, company: String)
+  // フォームの値を格納するケースクラス
+case class CharacterFormData(name: String, fullName: String, realName: String, roleId: Int, skill: String, image_url: String, company: Int)
 
+  // formから送信されたデータ ⇔ ケースクラスの変換を行う
   def form = Form(
     mapping(
       "name" -> nonEmptyText,
@@ -16,7 +18,7 @@ case class CharacterFormData(name: String, fullName: String, realName: String, r
       "role" -> number,
       "skill" -> text,
       "image_url" -> text,
-      "company" -> text
+      "company" -> number
     )(CharacterFormData.apply)(CharacterFormData.unapply)
   )
 
