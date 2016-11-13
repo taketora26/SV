@@ -2,7 +2,6 @@ package siliconValley.application.characters.form
 
 import play.api.data.Form
 import play.api.data.Forms._
-import siliconValley.domain.character.model.Role
 
 object CharacterForm {
 

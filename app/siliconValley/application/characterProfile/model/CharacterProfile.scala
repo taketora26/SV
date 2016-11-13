@@ -3,8 +3,9 @@ package siliconValley.application.characterProfile.model
 import play.api.libs.json.{Json, Writes}
 import siliconValley.domain.character.model.{Character, Role}
 import siliconValley.domain.character.repository.CharacterAffiliationRepository
-import siliconValley.domain.company.model.{CompanyProduct, Company}
-import siliconValley.domain.company.repository.{CompanyProductRepository, CompanyRepository}
+import siliconValley.domain.company.model.{Company, CompanyProduct}
+import siliconValley.domain.company.repository.CompanyRepository
+import siliconValley.domain.companyProduct.repository.CompanyProductRepository
 
 import scala.util.{Failure, Success}
 
@@ -62,7 +63,7 @@ object CharacterProfile {
       companyRepository.resolveById(companyId) match {
         case Success(r) => r match {
           case Some(company) => company
-          case None => new Company(0,"",0)
+          case None => new Company(0,"",0,"")
         }
         case Failure(e) => throw new IllegalArgumentException
       }

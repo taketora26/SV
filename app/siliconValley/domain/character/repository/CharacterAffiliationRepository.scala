@@ -1,8 +1,7 @@
 package siliconValley.domain.character.repository
 
-import akka.stream.impl.fusing.Log
-import scalikejdbc.{WrappedResultSet, AutoSession, DBSession}
-import siliconValley.infra.rdbms.{CharacterAffiliationSQLProvider, CharacterSQLProvider}
+import scalikejdbc.{AutoSession, DBSession, WrappedResultSet}
+import siliconValley.infra.rdbms.CharacterAffiliationSQLProvider
 
 import scala.util.Try
 

@@ -58,28 +58,4 @@ class CharacterSQLProvider {
       'skill -> skill,
       'image_url -> imageUrl
     )
-
-
-  //  def insert(email: String, password: String, fullName: String): SQL[Nothing, NoExtractor] =
-  //    SQL(
-  //      """
-  //        |INSERT INTO `users`
-  //        |(
-  //        |  `email`,
-  //        |  `password`,
-  //        |  `fullname`
-  //        |)
-  //        |VALUES (
-  //        |/*'email*/1,
-  //        |/*'password*/'password',
-  //        |/*'fullname*/'fullName'
-  //        |)
-  //      """.stripMargin
-  //    ).bindByName(
-  //      'email -> email,
-  //      'password -> password,
-  //      'fullname -> fullName
-  //    )
-
-
 }

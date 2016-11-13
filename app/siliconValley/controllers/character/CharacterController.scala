@@ -1,15 +1,11 @@
 package siliconValley.controllers.character
 
+import play.api.mvc.{Action, Controller}
 import siliconValley.application.characterProfile.model.CharacterProfile
 import siliconValley.application.characters.form.CharacterForm
 import siliconValley.application.characters.model.Characters
 import siliconValley.domain.character.repository.{CharacterAffiliationRepository, CharacterRepository}
-import play.api.mvc.{Action, Controller}
-import siliconValley.application.characters.form.CharacterForm.CharacterFormData
-import siliconValley.domain.character.model.{Character, Role}
 import siliconValley.domain.company.repository.CompanyRepository
-
-import scala.util.Try
 
 
 class CharacterController extends Controller {
@@ -27,7 +23,6 @@ class CharacterController extends Controller {
     Ok(siliconValley.views.html.characterList(characters))
   }
 
-
   def showCharacterProfile(characterId: Long) = Action { implicit request =>
     lazy val character = characterRepository.resolveById(characterId).get.get
     lazy val charactersProfile = CharacterProfile(character)
@@ -39,7 +34,6 @@ class CharacterController extends Controller {
     lazy val companies = companyRepository.resolveAll.get
     Ok(siliconValley.views.html.newCharacter(companies))
   }
-
 
   def createCharacter = Action { implicit request =>
     CharacterForm.form.bindFromRequest.fold(

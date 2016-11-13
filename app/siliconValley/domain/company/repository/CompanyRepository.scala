@@ -24,11 +24,16 @@ class CompanyRepository(
     companySQLProvider.selectByName(name).map(wrappedResultSet).single().apply()
   }
 
+  def store(name:String,companyProductId:Long,imageUrl:String):Try[Long] = Try {
+    companySQLProvider.insert(name,companyProductId,imageUrl).map(wrappedResultSet).updateAndReturnGeneratedKey().apply()
+  }
+
   private def wrappedResultSet(rs: WrappedResultSet): Company = {
     Company(
       id = rs.long("id"),
       name = rs.string("name"),
-      companyProductId = rs.int("company_product_id")
+      companyProductId = rs.int("company_product_id"),
+      imageUrl = rs.string("image_url")
     )
   }
 }

@@ -15,4 +15,22 @@ class CompanyProductSQLProvider {
     """.stripMargin
   ).bindByName('id -> CompanyId)
 
+  def insert(name:String,detail:String): SQL[Nothing, NoExtractor] =
+    SQL(
+      """
+        |INSERT INTO `company_product`
+        |(
+        |`name`,
+        |`detail`
+        |)
+        |VALUES (
+        |/*'name*/name,
+        |/*'detail*/'detail'
+        |)
+      """.stripMargin
+    ).bindByName(
+      'name -> name,
+      'detail -> detail
+    )
+
 }

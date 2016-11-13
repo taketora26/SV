@@ -1,10 +1,11 @@
-package siliconValley.domain.company.repository
+package siliconValley.domain.companyProduct.repository
 
-import scalikejdbc.{WrappedResultSet, AutoSession, DBSession}
-import siliconValley.domain.company.model.{Company, CompanyProduct}
+import scalikejdbc.{AutoSession, DBSession, WrappedResultSet}
+import siliconValley.domain.company.model.CompanyProduct
 import siliconValley.infra.rdbms.CompanyProductSQLProvider
 
 import scala.util.Try
+
 
 class CompanyProductRepository(
                                 val companyProductSQLProvider: CompanyProductSQLProvider = new CompanyProductSQLProvider
@@ -14,6 +15,10 @@ class CompanyProductRepository(
 
   def resolveById(id: Long): Try[Option[CompanyProduct]] = Try {
     companyProductSQLProvider.selectById(id).map(wrappedResultSet).single().apply()
+  }
+
+  def store(name:String,detail: String):Try[Long] = Try {
+    companyProductSQLProvider.insert(name,detail).map(wrappedResultSet).updateAndReturnGeneratedKey().apply()
   }
 
   private def wrappedResultSet(rs: WrappedResultSet): CompanyProduct = {

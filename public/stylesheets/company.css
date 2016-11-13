@@ -1,0 +1,12 @@
+.list{
+    width: 1100px;
+    margin: 10px auto 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+.company-form {
+    width: 600px;
+    margin: 20px auto 20px;
+    padding: 25px 25px 10px 25px;
+    border: 1px solid #ccc;
+}
