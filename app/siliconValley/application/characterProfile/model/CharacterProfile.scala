@@ -19,7 +19,8 @@ case class CharacterProfile(
                              imageUrl: String,
                              companyName: String,
                              companyProductName: String,
-                             companyProductDetail: String
+                             companyProductDetail: String,
+                             companyImageUrl: String
                              //                             phrase_english:String, todo Phrase modelを作成後
                              //                             phrase_japanese:String todo Phrase modelを作成後
                            )
@@ -41,7 +42,8 @@ object CharacterProfile {
         character.imageUrl,
         searchCompany(character).name,
         searchCompanyProduct(searchCompany(character)).name,
-        searchCompanyProduct(searchCompany(character)).detail
+        searchCompanyProduct(searchCompany(character)).detail,
+        searchCompany(character).imageUrl
       )
     }
 
