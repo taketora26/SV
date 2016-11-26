@@ -1,5 +1,6 @@
 package siliconValley.application.characters.model
 
+import play.api.libs.json.{Json, Writes}
 import siliconValley.domain.character.model.Role
 import siliconValley.domain.character.model.Character
 
@@ -14,6 +15,9 @@ case class Characters(
                      )
 
 object Characters {
+
+  implicit val CharactersWrite: Writes[Characters] = Json.writes[Characters]
+
   def apply(
              character: Character
            ): Characters = {
@@ -22,9 +26,10 @@ object Characters {
         character.name,
         character.fullName,
         character.realName,
-        Role.valueToObject(character.roleId),
+        Role.apply(character.roleId),
         character.skill,
         character.imageUrl
     )
   }
+
 }

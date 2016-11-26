@@ -39,7 +39,23 @@ sbt flywayMigrate -Dflyway.url=jdbc:mysql://localhost:3306/siliconValley_test -D
 sbt flywayClean -Dflyway.url=jdbc:mysql://localhost:3306/siliconValley_test -Dflyway.user=richard -Dflyway.password=siliconValley
 ```
 
+- アプリケーションの実行
+```
+$ activator "siliconValley/run"
+```
 
+- アプリケーションのテスト
+```
+$ activator "siliconValley/test"
+```
+
+- 特定のテストの実行
+
+例えば ```CharacterAffiliationRepositorySpecs``` のみ実行する場合は以下の通りです。
+
+```
+$ activator "siliconValley/testOnly siliconValley.domain.character.repository.CharacterAffiliationRepositorySpecs"
+```
 
 
 

@@ -33,6 +33,29 @@ with WithTestTable {
 
       }
     }
+
+    "読み取り(select)ができる" >> {
+      withSession {
+
+        //selectする
+        val actual = characterSQLProvider.selectByName("リチャード")
+          .map(rs => (
+            rs.int("id"),
+            rs.string("name"),
+            rs.string("full_name"),
+            rs.string("real_name"),
+            rs.int("role_id"),
+            rs.string("skill"),
+            rs.string("image_url")
+            )).list().apply()
+
+        val expectFullName = "リチャード・ヘンドリックス"
+
+        actual.head._3 must beEqualTo(expectFullName)
+
+      }
+    }
+
   }
 }
 

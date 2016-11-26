@@ -1,8 +1,13 @@
 logs
 target
+project
 /.idea
 /.idea_modules
 /.classpath
 /.project
 /.settings
 /RUNNING_PID
+app-2.11/
+app/siliconValley/domain/character/model/x.json
+src/
+test-2.11/
